@@ -8,7 +8,8 @@ public:
 	void push(int value);
 	int pop(void);
 	int getLength(void);
-	virtual Queue* copy(void);
+	void showQueue(void);
+    Queue* copy(void);
 	Queue();
 	Queue(const Queue& queue);
 	Queue(const Queue& queue1, const Queue& queue2);
@@ -23,5 +24,7 @@ private:
 	node* last;
 	int length;
 };
-Queue* mergeQ(Queue q1, Queue q2);
+
+template <class T>
+T* mergeQ(T q1, T q2);
 #endif

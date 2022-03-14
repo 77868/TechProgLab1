@@ -1,4 +1,5 @@
 #include "queue.h"
+#include <iostream>
 
 bool Queue::isEmpty(void)
 {
@@ -110,8 +111,12 @@ Queue::~Queue()
 	delete currentPtr;
 }
 
-Queue* mergeQ(Queue q1, Queue q2)
+void Queue::showQueue(void) 
 {
-	Queue* newQueue = new Queue(q1, q2);
-	return newQueue;
+	Queue tmp(*this);
+	while (!tmp.isEmpty())
+	{
+		std::cout << tmp.pop() << ' ';
+	}
+	std::cout << "\n";
 }
